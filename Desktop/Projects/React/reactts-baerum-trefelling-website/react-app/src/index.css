@@ -1,0 +1,123 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+}
+
+ul,
+li,
+a {
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+.button-arrow {
+    margin-left: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    width: var(--font-width);
+    text-align: center;
+    color: var(--color--dark);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 1rem + 4vw, 5rem);
+}
+
+h2 {
+    font-size: clamp(1.3rem, 1rem + 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.2em, 20vw, 1.5em);
+}
+
+h4 {
+    font-size: clamp(0.8rem, 1rem + 4vw, 1.3rem);
+}
+
+p {
+    font-size: calc(8px + 0.5rem);
+}
+
+a {
+    color: inherit;
+    /* blue colors for links too */
+    text-decoration: inherit;
+    /* no underline */
+}
+
+.button {
+    min-width: 8em;
+    max-height: 4em;
+    padding: 0.5em;
+    outline: none;
+    border: none;
+    transition: all var(--transition-time) ease;
+    margin: 10px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(8px + 0.5rem);
+    font-weight: bold;
+}
+
+.button--primary {
+    background-color: var(--color--primary);
+    color: var(--color--light);
+}
+
+.button--primary:hover {
+    background-color: var(--color--primary-hover);
+}
+
+.button--secondary {
+    background-color: rgba(40, 40, 40, 0.1);
+    color: var(--color--light);
+    border: 2px solid var(--color--secondary);
+}
+
+.button--secondary:hover {
+    background-color: rgba(40, 40, 40, 0.5);
+}
+
+.button--danger {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.button--danger:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 80em;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+    margin: 5px auto;
+    border-bottom: 1px solid var(--color--primary);
+    padding: 1em;
+    width: 90%;
+    font-family: "Montserrat", sans-serif;
+}
