@@ -1,0 +1,12 @@
+.animation__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.animation {
+  border-radius: 50%;
+}

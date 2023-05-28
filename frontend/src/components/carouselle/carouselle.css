@@ -1,0 +1,72 @@
+.carouselle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1900px;
+  text-align: center;
+}
+
+/* .carouselle__loading {
+  /* Your styles for the loading message */
+
+.carouselle__image {
+  max-height: 60vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+  width: 100%;
+}
+
+.carouselle__caption {
+  bottom: 20px;
+  color: white;
+  margin: 0 auto;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.carouselle__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.carouselle__description {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* iPad portrait and landscape */
+
+@media only screen and (min-width: 768px) {
+  .carouselle__item {
+    max-height: 70vh;
+  }
+  .carouselle__image {
+    max-height: 70vh;
+  }
+  .carouselle__title {
+    font-size: 2rem;
+  }
+  .carouselle__description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 1024px) {
+  .carouselle__item {
+    max-height: 80vh;
+  }
+  .carouselle__image {
+    max-height: 80vh;
+  }
+  .carouselle__title {
+    font-size: 4rem;
+  }
+  .carouselle__description {
+    font-size: 2rem;
+  }
+}

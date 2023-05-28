@@ -1,0 +1,12 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 1900px;
+  min-height: 60vh;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--white);
+}

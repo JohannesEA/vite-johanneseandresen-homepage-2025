@@ -1,0 +1,8 @@
+.products {
+  padding: 40px;
+  max-width: 1900px;
+  min-height: 80vh;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--white);
+}
