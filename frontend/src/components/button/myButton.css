@@ -6,6 +6,7 @@
   font-size: 1, 2em;
   cursor: pointer;
   border-radius: 5px;
+  color: var(--black);
 }
 
 .button:hover {

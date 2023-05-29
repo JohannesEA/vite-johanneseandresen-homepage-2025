@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { client } from "../contentful/config";
 
-interface HistoryProps {
+export interface HistoryProps {
   id: string;
   title: string;
   description: string;

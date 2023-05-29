@@ -9,12 +9,12 @@ const SimpleNavbar = () => {
   const navigate = useNavigate();
 
   return (
-    <Navbar className="navbar" expand="lg">
+    <Navbar className="navbar--arrow" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="navbar__brand">
+        <Navbar.Brand className="navbar__brand--arrow">
           <FaArrowLeft
             size={30}
-            className="navbar__icon"
+            className="navbar__icon--arrow"
             onClick={() => navigate(-1)}
           />
         </Navbar.Brand>

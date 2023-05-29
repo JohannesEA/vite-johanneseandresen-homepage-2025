@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 
 const MyCustomNavbar = () => {
   const [showNav, setShowNav] = useState(true);
+  const [showOffcanvas, setShowOffcanvas] = useState<boolean>(false);
 
   useEffect(() => {
     let prevScrollPos = window.pageYOffset;
@@ -42,7 +43,7 @@ const MyCustomNavbar = () => {
           className={`navbar ${showNav ? "sticky-top" : "hide"}`}
           expand={expand}
         >
-          <Container fluid>
+          <Container fluid className="navbar__container">
             <Navbar.Brand href="#" className="navbar__brand">
               <Link
                 activeClass="active"
@@ -62,12 +63,15 @@ const MyCustomNavbar = () => {
             <Navbar.Toggle
               aria-controls={`navbar-offcanvas-expand-${expand}`}
               className="navbar__toggle"
+              onClick={() => setShowOffcanvas(!showOffcanvas)}
             />
             <Navbar.Offcanvas
               id={`navbar-offcanvas-expand-${expand}`}
               aria-labelledby={`navbar-offcanvas-expand-${expand}`}
               placement="end"
               className="navbar__offcanvas"
+              show={showOffcanvas}
+              onHide={() => setShowOffcanvas(!showOffcanvas)}
             >
               <Offcanvas.Header
                 closeButton
@@ -90,6 +94,7 @@ const MyCustomNavbar = () => {
                     offset={-70}
                     duration={500}
                     className="navbar__link"
+                    onClick={() => setShowOffcanvas(false)}
                   >
                     Hjem
                   </Link>
@@ -101,6 +106,8 @@ const MyCustomNavbar = () => {
                     offset={-70}
                     duration={500}
                     className="navbar__link"
+                    data-bs-toggle="collapse"
+                    onClick={() => setShowOffcanvas(false)}
                   >
                     Vår tilnærming
                   </Link>
@@ -112,6 +119,7 @@ const MyCustomNavbar = () => {
                     offset={-70}
                     duration={500}
                     className="navbar__link"
+                    onClick={() => setShowOffcanvas(false)}
                   >
                     Våre produkter
                   </Link>
@@ -123,6 +131,7 @@ const MyCustomNavbar = () => {
                     offset={-70}
                     duration={500}
                     className="navbar__link"
+                    onClick={() => setShowOffcanvas(false)}
                   >
                     Kontakt oss
                   </Link>

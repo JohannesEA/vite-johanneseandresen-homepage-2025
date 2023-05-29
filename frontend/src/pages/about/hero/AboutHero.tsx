@@ -1,10 +1,12 @@
 import ImageAndTextContainer from "../../../components/imageAndTextContainer/ImageAndTextContainer";
-import useHistoryData from "../../../hooks/usehistoryData";
+import { HistoryProps } from "../../../hooks/usehistoryData";
 import "./aboutHero.css";
 
-const AboutHero = () => {
-  const { history } = useHistoryData();
+interface IAboutHero {
+  history: HistoryProps[];
+}
 
+const AboutHero: React.FC<IAboutHero> = ({ history }) => {
   const revertImage = (index: number) => {
     if (index % 2 === 0) {
       return true;
