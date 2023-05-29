@@ -12,7 +12,7 @@ const Contacts = () => {
         <div className="banner__container">
           <div className="banner">
             <AiOutlineMail size={25} className="icon" />
-            <h4>post@skeiveblomster.no</h4>
+            <p>post@skeiveblomster.no</p>
           </div>
         </div>
         <div className="banner__container">
@@ -26,7 +26,7 @@ const Contacts = () => {
         <div className="banner__container">
           <div className="banner">
             <BiMap size={25} className="icon" />
-            <h4>adresse 50b</h4>
+            <p>adresse 50b</p>
           </div>
         </div>
       </div>

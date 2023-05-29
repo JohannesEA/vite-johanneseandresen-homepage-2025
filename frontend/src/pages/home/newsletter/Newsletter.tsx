@@ -42,7 +42,7 @@ const Newsletter: React.FC = () => {
 
   return (
     <div className="newsletter">
-      <h1 className="large-margin-bottom large-margin-top">
+      <h1 className="medium-margin-bottom large-margin-top">
         Meld deg på vårt nyhetsbrev
       </h1>
 
