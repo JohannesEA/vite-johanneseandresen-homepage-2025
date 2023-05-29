@@ -31,6 +31,7 @@ const Newsletter: React.FC = () => {
     // handle form submission here
     console.log(values);
     setSubmitting(false);
+    setShowSendAnimation(true);
   };
 
   useEffect(() => {
@@ -41,46 +42,47 @@ const Newsletter: React.FC = () => {
 
   return (
     <div className="newsletter">
-      <h1 className="large-margin-bottom">Meld deg på vårt nyhetsbrev</h1>
+      <h1 className="large-margin-bottom large-margin-top">
+        Meld deg på vårt nyhetsbrev
+      </h1>
 
-      <Container className="contact-form">
+      <Container className="newsletter-contact-form">
         {!showSendAnimation && (
-          <h3>Skriv inn din epost-adresse og meld deg på vårt nyhetsbrev</h3>
+          <div className="newsletter-contact-form__title">
+            <p>Skriv inn din epost-adresse og meld deg på vårt nyhetsbrev.</p>
+          </div>
         )}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >
-          {({ errors, touched }) =>
+          {({ errors, touched, handleSubmit }) =>
             showSendAnimation ? (
               <SendEmailAnimations />
             ) : (
               <>
                 {" "}
-                <Form className="contact-form__form">
-                  <BootstrapForm.Group className="contact-form__group">
-                    <BootstrapForm.Label className="contact-form__label">
+                <Form className="newsletter-contact-form__form">
+                  <BootstrapForm.Group className="newsletter-contact-form__group">
+                    <BootstrapForm.Label className="newsletter-contact-form__label">
                       Epost
                     </BootstrapForm.Label>
                     <Field
                       name="email"
                       type="text"
                       className={
-                        "form-control contact-form__input" +
+                        "newsletter-form-control newsletter-contact-form__input" +
                         (errors.email && touched.email ? " is-invalid" : "")
                       }
                     />
                     <ErrorMessage
                       name="email"
                       component="div"
-                      className="invalid-feedback"
+                      className="newsletter-invalid-feedback"
                     />
                   </BootstrapForm.Group>
-                  <MyButton
-                    text={"Meld deg på"}
-                    onPress={() => setShowSendAnimation(true)}
-                  />
+                  <MyButton text={"Meld deg på"} onPress={handleSubmit} />
                 </Form>
               </>
             )

@@ -11,7 +11,7 @@
   background-color: var(--light);
 }
 
-.contact-form {
+.newsletter-contact-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,36 +22,51 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: var(--white);
   border-radius: 1em;
+  background-image: url("./flowers.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  backdrop-filter: blur(50px);
+  background-size: cover;
 }
 
-.contact-form__form {
+.newsletter-contact-form__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-contact-form__form {
   width: 100%;
   max-width: 800px;
   padding: 20px;
   width: 100%;
 }
 
-.contact-form__group {
+.newsletter-contact-form__group {
   margin-bottom: 15px;
 }
 
-.contact-form__label {
+.newsletter-contact-form__label {
   display: block;
   margin-bottom: 5px;
   text-align: left;
 }
 
-.invalid-feedback {
+.newsletter-invalid-feedback {
   text-align: left;
+  color: var(--red);
 }
 
-.contact-form__input {
+.newsletter-contact-form__input {
   width: 100%;
   padding: 10px;
   background-color: var(--white);
 }
 
-.contact-form__button {
+.newsletter-contact-form__button {
   margin-top: 1em;
   max-width: 200px;
   padding: 10px;
@@ -61,14 +76,14 @@
   border: 1px solid var(--gold);
 }
 
-.contact-form__button:hover {
+.newsletter-contact-form__button:hover {
   color: var(--black);
   background-color: var(--gold-hover);
   border: 1px solid var(--gold);
 }
 
 @media (max-width: 575px) {
-  .contact-form__form {
+  .newsletter-contact-form__form {
     padding: 10px;
   }
 }

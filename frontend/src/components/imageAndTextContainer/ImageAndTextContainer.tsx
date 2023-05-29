@@ -1,6 +1,6 @@
 import React from "react";
 import "./imageAndTextContainer.css";
-import { isMobile } from "../../utils/utils";
+import { useMediaQuery } from "react-responsive";
 
 interface ImageAndTextContainerProps {
   title: string;
@@ -17,7 +17,9 @@ const ImageAndTextContainer: React.FC<ImageAndTextContainerProps> = ({
   img,
   switch: imgSwitch,
 }) => {
-  if (isMobile()) {
+  const isMobile = useMediaQuery({ maxWidth: 999 });
+
+  if (isMobile) {
     return (
       <div className="image-text-container">
         <div className="image-text-container__image">
@@ -25,9 +27,8 @@ const ImageAndTextContainer: React.FC<ImageAndTextContainerProps> = ({
         </div>
         <div className="image-text-container__text">
           <h1>{title}</h1>
-          <br />
           {slogan && <h2>{slogan}</h2>}
-          <p>{description}</p>
+          <p className="medium-margin-top">{description}</p>
         </div>
       </div>
     );
@@ -42,18 +43,16 @@ const ImageAndTextContainer: React.FC<ImageAndTextContainerProps> = ({
           </div>
           <div className="image-text-container__text">
             <h1>{title}</h1>
-            <br />
             {slogan && <h2>{slogan}</h2>}
-            <p>{description}</p>
+            <p className="medium-margin-top">{description}</p>
           </div>
         </>
       ) : (
         <>
           <div className="image-text-container__text">
             <h1>{title}</h1>
-            <br />
             {slogan && <h2>{slogan}</h2>}
-            <p>{description}</p>
+            <p className="medium-margin-top">{description}</p>
           </div>
           <div className="image-text-container__image">
             <img src={img} alt={title} />

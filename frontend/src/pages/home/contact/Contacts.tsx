@@ -18,7 +18,9 @@ const Contacts = () => {
         <div className="banner__container">
           <div className="banner">
             <AiOutlinePhone size={25} className="icon" />
-            <h4>+47 12345678</h4>
+            <a className="phone__link" href="tel:PHONE_NUM">
+              +47 12345678
+            </a>
           </div>
         </div>
         <div className="banner__container">

@@ -43,6 +43,7 @@ const ContactForm: React.FC = () => {
     // handle form submission here
     console.log(values);
     setSubmitting(false);
+    setShowSendAnimation(true);
   };
 
   useEffect(() => {
@@ -58,7 +59,7 @@ const ContactForm: React.FC = () => {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ errors, touched }) =>
+        {({ errors, touched, handleSubmit }) =>
           showSendAnimation ? (
             <SendEmailAnimations />
           ) : (
@@ -121,10 +122,7 @@ const ContactForm: React.FC = () => {
                     className="invalid-feedback"
                   />
                 </BootstrapForm.Group>
-                <MyButton
-                  text={"Send melding"}
-                  onPress={() => setShowSendAnimation(true)}
-                />
+                <MyButton text={"Send melding"} onPress={handleSubmit} />
               </Form>
             </>
           )
