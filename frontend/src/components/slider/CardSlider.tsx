@@ -1,12 +1,13 @@
-import Slider from "react-slick";
-import useProductData from "../../hooks/useProductData";
+import Slider, { Settings } from "react-slick";
+import { ProductProps } from "../../hooks/useProductData";
 import CustomCard from "../card/MyCard";
 import { useWindowWidth } from "../../utils/utils";
 import "./cardSlider.css";
 
-export default function SimpleSlider() {
-  const { products, isProductLoading } = useProductData();
-
+interface ISimpleSlider {
+  products: ProductProps[];
+}
+const SimpleSlider: React.FC<ISimpleSlider> = ({ products }) => {
   const screenwidth = useWindowWidth();
 
   const calculateColumns = () => {
@@ -19,12 +20,9 @@ export default function SimpleSlider() {
     }
   };
 
-  if (isProductLoading) {
-    return <div className="carouselle__loading">Loading...</div>;
-  }
-
-  var settings = {
-    dots: false,
+  var settings: Settings = {
+    arrows: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: calculateColumns(),
@@ -32,7 +30,7 @@ export default function SimpleSlider() {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="slider">
       {products.map((product, index) => (
         <CustomCard
           key={index}
@@ -44,4 +42,6 @@ export default function SimpleSlider() {
       ))}
     </Slider>
   );
-}
+};
+
+export default SimpleSlider;

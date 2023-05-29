@@ -1,18 +1,28 @@
-import Button from "react-bootstrap/Button";
 import { Container, Row, Col } from "react-bootstrap";
-import useAboutData from "../../../hooks/useAboutData";
 import "./about.css";
+import MyButton from "../../../components/button/MuButton";
+import { useNavigate } from "react-router-dom";
+import { AboutProps } from "../../../hooks/useAboutData";
 
-const About = () => {
-  const { data, error } = useAboutData();
+interface IAbout {
+  data: AboutProps | null;
+}
 
-  if (error) return <p>Det har skjedd en feil: {error.message}</p>;
-  if (!data) return <p>No Data</p>;
+const About: React.FC<IAbout> = ({ data }) => {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/about`;
+    navigate(path);
+  };
+
+  if (!data) {
+    return <div>Ingen data</div>;
+  }
 
   const { title, slogan, description } = data;
 
   return (
-    <Container className="about">
+    <Container id="about" className="about">
       <Row className="about__row">
         <h1>{title}</h1>
       </Row>
@@ -29,9 +39,7 @@ const About = () => {
         </Col>
       </Row>
       <Row className="about__row about__row--cta">
-        <Button className="about__button" variant="primary">
-          Kontakt Oss
-        </Button>
+        <MyButton text={"Les mer"} onPress={routeChange} />
       </Row>
     </Container>
   );

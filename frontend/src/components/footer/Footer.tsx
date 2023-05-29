@@ -15,9 +15,9 @@ const Footer = () => {
           </Col>
           <Col md={4} className="footer__section">
             <h4>Om oss</h4>
-            <p>Vi dyrker blomster</p>
-            <p>Vi dyrker blomster</p>
-            <p>Vi dyrker blomster</p>
+            <p>Sesongbasert</p>
+            <p>Kjærlighet</p>
+            <p>Blomster</p>
           </Col>
         </Row>
         <div className="footer__copyright">

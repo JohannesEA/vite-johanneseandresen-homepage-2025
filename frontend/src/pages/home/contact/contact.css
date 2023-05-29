@@ -3,10 +3,44 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
   max-width: 1900px;
-  min-height: 60vh;
+  min-height: 80vh;
   margin: 0 auto;
   text-align: center;
+  background-color: var(--light);
+}
+
+.contact-info__banners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 60em;
+  justify-items: center;
+}
+
+.banner__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: var(--white);
+  min-width: 20em;
+  min-height: 10em;
+  width: 100%;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon {
+  margin-bottom: 1em;
 }

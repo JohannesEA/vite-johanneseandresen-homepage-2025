@@ -1,15 +1,13 @@
 import Carousel from "react-bootstrap/Carousel";
-import useProductData from "../../hooks/useProductData";
+import { ProductProps } from "../../hooks/useProductData";
 import CustomCard from "../card/MyCard";
 import "./productCarouselle.css";
 
-const ProductCarouselle = () => {
-  const { products, isProductLoading } = useProductData();
+interface IProductCarouselle {
+  products: ProductProps[];
+}
 
-  if (isProductLoading) {
-    return <div className="carouselle__loading">Loading...</div>;
-  }
-
+const ProductCarouselle: React.FC<IProductCarouselle> = ({ products }) => {
   return (
     <Carousel className="carouselle">
       {products.map((product, index) => (

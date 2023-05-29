@@ -1,11 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 import { client } from "../contentful/config";
 
+export interface CarouselleProps {
+  title: string;
+  description: string;
+  image: string;
+}
+
 const useCarouselleData = () => {
   const [isCarouselleLoading, setIsCarouselleLoading] =
     useState<boolean>(false);
   const [carouselleSlides, setCarouselleSlides] = useState<
-    Array<{ title: string; description: string; image: string }>
+    Array<CarouselleProps>
   >([]);
 
   const cleanUpCarouselleSlides = useCallback((rawData: any[]) => {

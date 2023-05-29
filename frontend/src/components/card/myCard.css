@@ -1,11 +1,14 @@
 .card {
-  min-height: 40em;
+  min-height: 35em;
   height: 60vh;
   width: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--white);
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .card__image {
@@ -47,6 +50,7 @@
 @media only screen and (max-width: 768px) {
   .card {
     width: 100%;
+    max-width: 30em;
     height: 100%;
     max-height: none;
   }

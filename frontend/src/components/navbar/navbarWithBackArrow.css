@@ -1,0 +1,20 @@
+.navbar {
+  background-color: var(--gold);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  margin-left: 2em;
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar__icon {
+  max-width: 3em;
+  max-height: 3em;
+  border-radius: 100%;
+  margin-right: 0.5em;
+}

@@ -7,12 +7,13 @@ body {
 
 .footer {
   flex-shrink: 0;
-  background-color: var(--pink);
+  background-color: var(--gold);
   padding: 20px 0;
 }
 
 .footer__section {
   margin-bottom: 20px;
+  color: var(--gray--dark);
 }
 
 .footer__copyright {
@@ -20,6 +21,7 @@ body {
   text-align: center;
   border-top: 1px solid #dee2e6;
   padding-top: 20px;
+  color: var(--gray--dark);
 }
 
 @media (min-width: 768px) {

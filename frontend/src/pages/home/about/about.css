@@ -3,12 +3,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
   max-width: 1900px;
   min-height: 80vh;
   margin: 0 auto;
   text-align: center;
-  background-color: var(--white);
+  background-color: var(--light);
 }
 
 .about__row {
@@ -33,7 +33,7 @@
 
 .about__slogan::before {
   content: "";
-  border-left: 2px solid var(--gold);
+  border-left: 4px solid var(--gold);
   height: 100%;
   margin-right: 10px;
 }

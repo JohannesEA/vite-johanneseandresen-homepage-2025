@@ -1,16 +1,14 @@
 import Carousel from "react-bootstrap/Carousel";
-import useCarouselleData from "../../hooks/useCarouselledata";
+import { CarouselleProps } from "../../hooks/useCarouselledata";
 import "./carouselle.css";
 
-const Carouselle = () => {
-  const { carouselleSlides, isCarouselleLoading } = useCarouselleData();
+interface ICarouselle {
+  carouselleSlides: CarouselleProps[];
+}
 
-  if (isCarouselleLoading) {
-    return <div className="carouselle__loading">Loading...</div>;
-  }
-
+const Carouselle: React.FC<ICarouselle> = ({ carouselleSlides }) => {
   return (
-    <Carousel className="carouselle">
+    <Carousel id="hero" className="carouselle">
       {carouselleSlides.map((slide, index) => (
         <Carousel.Item key={index} className="carouselle__item">
           <img

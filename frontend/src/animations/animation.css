@@ -4,9 +4,22 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  background-color: var(--white);
+  max-width: 20em;
+  background-color: transparent;
+  margin: 0 auto;
 }
 
 .animation {
   border-radius: 50%;
+}
+
+.send-animation__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 20em;
+  max-height: 20em;
+  background-color: transparent;
 }

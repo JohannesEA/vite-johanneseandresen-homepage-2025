@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { client } from "../contentful/config";
 
-interface AboutProps {
+export interface AboutProps {
   id: string;
   title: string;
   description: string;

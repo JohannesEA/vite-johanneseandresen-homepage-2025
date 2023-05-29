@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Field, Form, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import { Button, Form as BootstrapForm, Container } from "react-bootstrap";
+import { Form as BootstrapForm, Container } from "react-bootstrap";
 import "./contact-form.css";
+import MyButton from "../button/MuButton";
+import SendEmailAnimations from "../../animations/SendAnimation";
 
 interface FormValues {
   email: string;
@@ -11,6 +13,7 @@ interface FormValues {
 }
 
 const ContactForm: React.FC = () => {
+  const [showSendAnimation, setShowSendAnimation] = useState<boolean>(false);
   const initialValues: FormValues = {
     email: "",
     title: "",
@@ -42,6 +45,12 @@ const ContactForm: React.FC = () => {
     setSubmitting(false);
   };
 
+  useEffect(() => {
+    if (showSendAnimation) {
+      setTimeout(() => setShowSendAnimation(false), 6000);
+    }
+  }, [showSendAnimation]);
+
   return (
     <Container className="contact-form">
       <Formik
@@ -49,69 +58,77 @@ const ContactForm: React.FC = () => {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ errors, touched }) => (
-          <Form className="contact-form__form">
-            <BootstrapForm.Group className="contact-form__group">
-              <BootstrapForm.Label className="contact-form__label">
-                Epost
-              </BootstrapForm.Label>
-              <Field
-                name="email"
-                type="text"
-                className={
-                  "form-control contact-form__input" +
-                  (errors.email && touched.email ? " is-invalid" : "")
-                }
-              />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="invalid-feedback"
-              />
-            </BootstrapForm.Group>
-            <BootstrapForm.Group className="contact-form__group">
-              <BootstrapForm.Label className="contact-form__label">
-                Tittel
-              </BootstrapForm.Label>
-              <Field
-                name="title"
-                type="text"
-                className={
-                  "form-control contact-form__input" +
-                  (errors.title && touched.title ? " is-invalid" : "")
-                }
-              />
-              <ErrorMessage
-                name="title"
-                component="div"
-                className="invalid-feedback"
-              />
-            </BootstrapForm.Group>
-            <BootstrapForm.Group className="contact-form__group">
-              <BootstrapForm.Label className="contact-form__label">
-                Melding
-              </BootstrapForm.Label>
-              <Field
-                name="description"
-                as="textarea"
-                className={
-                  "form-control contact-form__input" +
-                  (errors.description && touched.description
-                    ? " is-invalid"
-                    : "")
-                }
-              />
-              <ErrorMessage
-                name="description"
-                component="div"
-                className="invalid-feedback"
-              />
-            </BootstrapForm.Group>
-            <Button className="contact-form__button" type="submit">
-              Send Melding
-            </Button>
-          </Form>
-        )}
+        {({ errors, touched }) =>
+          showSendAnimation ? (
+            <SendEmailAnimations />
+          ) : (
+            <>
+              {" "}
+              <Form className="contact-form__form">
+                <BootstrapForm.Group className="contact-form__group">
+                  <BootstrapForm.Label className="contact-form__label">
+                    Epost
+                  </BootstrapForm.Label>
+                  <Field
+                    name="email"
+                    type="text"
+                    className={
+                      "form-control contact-form__input" +
+                      (errors.email && touched.email ? " is-invalid" : "")
+                    }
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </BootstrapForm.Group>
+                <BootstrapForm.Group className="contact-form__group">
+                  <BootstrapForm.Label className="contact-form__label">
+                    Tittel
+                  </BootstrapForm.Label>
+                  <Field
+                    name="title"
+                    type="text"
+                    className={
+                      "form-control contact-form__input" +
+                      (errors.title && touched.title ? " is-invalid" : "")
+                    }
+                  />
+                  <ErrorMessage
+                    name="title"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </BootstrapForm.Group>
+                <BootstrapForm.Group className="contact-form__group">
+                  <BootstrapForm.Label className="contact-form__label">
+                    Melding
+                  </BootstrapForm.Label>
+                  <Field
+                    name="description"
+                    as="textarea"
+                    className={
+                      "form-control contact-form__input" +
+                      (errors.description && touched.description
+                        ? " is-invalid"
+                        : "")
+                    }
+                  />
+                  <ErrorMessage
+                    name="description"
+                    component="div"
+                    className="invalid-feedback"
+                  />
+                </BootstrapForm.Group>
+                <MyButton
+                  text={"Send melding"}
+                  onPress={() => setShowSendAnimation(true)}
+                />
+              </Form>
+            </>
+          )
+        }
       </Formik>
     </Container>
   );

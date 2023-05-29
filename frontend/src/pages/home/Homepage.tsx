@@ -11,9 +11,9 @@ import useCarouselleData from "../../hooks/useCarouselledata";
 import FlowerAnimation from "../../animations/FlowerAnimation";
 
 const Homepage = () => {
-  const { loading } = useAboutData();
-  const { isProductLoading } = useProductData();
-  const { isCarouselleLoading } = useCarouselleData();
+  const { data, loading } = useAboutData();
+  const { products, isProductLoading } = useProductData();
+  const { carouselleSlides, isCarouselleLoading } = useCarouselleData();
 
   const showLoadingAnimation =
     loading || isCarouselleLoading || isProductLoading;
@@ -27,9 +27,9 @@ const Homepage = () => {
       ) : (
         <>
           <MyCustomNavbar />
-          <Carouselle />
-          <About />
-          <Products />
+          <Carouselle carouselleSlides={carouselleSlides} />
+          <About data={data} />
+          <Products products={products} />
           <Contacts />
           <Footer />
         </>

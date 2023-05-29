@@ -2,20 +2,62 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-scroll";
+
 import "./navbar.css";
+import { useState, useEffect } from "react";
 
 const MyCustomNavbar = () => {
+  const [showNav, setShowNav] = useState(true);
+
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      if (currentScrollPos <= 0) {
+        setShowNav(true);
+      } else if (prevScrollPos < currentScrollPos) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar key={expand} className="navbar" expand={expand}>
+        <Navbar
+          key={expand}
+          className={`navbar ${showNav ? "sticky-top" : "hide"}`}
+          expand={expand}
+        >
           <Container fluid>
             <Navbar.Brand href="#" className="navbar__brand">
-              <img
-                className="navbar__logo"
-                src="/assets/images/logo.png"
-                alt="logo"
-              />
+              <Link
+                activeClass="active"
+                to="hero"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <img
+                  className="navbar__logo"
+                  src="/assets/images/logo.png"
+                  alt="logo"
+                />
+              </Link>
             </Navbar.Brand>
             <Navbar.Toggle
               aria-controls={`navbar-offcanvas-expand-${expand}`}
@@ -40,18 +82,50 @@ const MyCustomNavbar = () => {
               </Offcanvas.Header>
               <Offcanvas.Body className="navbar__offcanvas-body">
                 <Nav className="navbar__nav justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#home" className="navbar__link">
+                  <Link
+                    activeClass="active"
+                    to="hero"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="navbar__link"
+                  >
                     Hjem
-                  </Nav.Link>
-                  <Nav.Link href="#approach" className="navbar__link">
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="navbar__link"
+                  >
                     Vår tilnærming
-                  </Nav.Link>
-                  <Nav.Link href="#products" className="navbar__link">
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="products"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="navbar__link"
+                  >
                     Våre produkter
-                  </Nav.Link>
-                  <Nav.Link href="#contact" className="navbar__link">
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="navbar__link"
+                  >
                     Kontakt oss
-                  </Nav.Link>
+                  </Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
