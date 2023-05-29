@@ -16,3 +16,14 @@ export const useWindowWidth = (): number => {
 
   return width;
 };
+
+export const isMobile = () => {
+  // Set the breakpoint
+  const mobileBreakpoint = 600;
+
+  // Get the viewport width
+  const viewportWidth = window.innerWidth;
+
+  // Return true if the viewport width is less than or equal to the mobile breakpoint
+  return viewportWidth <= mobileBreakpoint;
+};

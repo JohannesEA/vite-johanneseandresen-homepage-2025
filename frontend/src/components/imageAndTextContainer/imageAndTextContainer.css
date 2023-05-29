@@ -1,11 +1,12 @@
 .image-text-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .image-text-container__image,
 .image-text-container__text {
-  width: 50%;
+  width: 100%;
   max-height: 50em;
 }
 
@@ -25,4 +26,11 @@
 .image-text-container__text h1,
 .image-text-container__text h2 {
   margin: 0;
+}
+
+@media (min-width: 601px) {
+  .image-text-container__image,
+  .image-text-container__text {
+    width: 50%;
+  }
 }
