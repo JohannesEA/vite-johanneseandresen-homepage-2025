@@ -1,5 +1,5 @@
 .card {
-  min-height: 35em;
+  min-height: 28em;
   height: 60vh;
   width: 50vh;
   display: flex;
@@ -53,6 +53,7 @@
   .card {
     width: 100%;
     max-width: 30em;
+    max-height: 30em;
     height: 100%;
     max-height: none;
   }

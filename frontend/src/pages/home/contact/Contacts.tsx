@@ -7,8 +7,6 @@ const Contacts = () => {
   return (
     <div id="contact" className="contact">
       <h1 className="medium-margin-bottom large-margin-top">Kontakt oss</h1>
-
-      <ContactForm />
       <div className="contact-info__banners large-margin-top large-margin-bottom">
         <div className="banner__container">
           <div className="banner">
@@ -29,6 +27,8 @@ const Contacts = () => {
           </div>
         </div>
       </div>
+
+      <ContactForm />
     </div>
   );
 };

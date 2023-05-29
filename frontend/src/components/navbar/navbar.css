@@ -1,5 +1,5 @@
 .navbar {
-  background-color: var(--gold);
+  background-color: transparent;
 }
 
 .navbar__container {
@@ -28,7 +28,7 @@
 }
 
 .navbar__offcanvas {
-  background: var(--gold);
+  background: var(--light);
 }
 
 .navbar__offcanvas-header {

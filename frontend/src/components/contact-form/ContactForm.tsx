@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
   }, [showSendAnimation]);
 
   return (
-    <Container className="contact-form">
+    <Container className="contact-form large-margin-bottom">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
