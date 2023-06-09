@@ -11,7 +11,7 @@ interface IAbout {
 const About: React.FC<IAbout> = ({ data }) => {
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = `/about`;
+    let path = `/om`;
     navigate(path);
   };
 

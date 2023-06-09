@@ -34,7 +34,7 @@ const Homepage = () => {
           <About data={data} />
           <Products products={products} />
           <Newsletter />
-          <Contacts />
+          <Contacts data={contactinfo} />
           <Footer data={contactinfo} />
         </>
       )}
