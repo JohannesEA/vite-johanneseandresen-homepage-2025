@@ -32,7 +32,7 @@ const useCarouselleData = () => {
     setIsCarouselleLoading(true);
     try {
       const response = await client.getEntries({
-        content_type: "flowerStore",
+        content_type: "flowerStoreCarouselle",
       });
       const responseData = response.items;
       if (responseData) {
