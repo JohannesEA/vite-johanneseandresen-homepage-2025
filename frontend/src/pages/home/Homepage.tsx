@@ -10,14 +10,16 @@ import useProductData from "../../hooks/useProductData";
 import useCarouselleData from "../../hooks/useCarouselledata";
 import FlowerAnimation from "../../animations/FlowerAnimation";
 import Newsletter from "./newsletter/Newsletter";
+import useContactInfo from "../../hooks/useFetchContactinformation";
 
 const Homepage = () => {
   const { data, loading } = useAboutData();
   const { products, isProductLoading } = useProductData();
   const { carouselleSlides, isCarouselleLoading } = useCarouselleData();
+  const { data: contactinfo, loading: contactinfoLoading } = useContactInfo();
 
   const showLoadingAnimation =
-    loading || isCarouselleLoading || isProductLoading;
+    loading || isCarouselleLoading || isProductLoading || contactinfoLoading;
 
   return (
     <>
@@ -33,7 +35,7 @@ const Homepage = () => {
           <Products products={products} />
           <Newsletter />
           <Contacts />
-          <Footer />
+          <Footer data={contactinfo} />
         </>
       )}
     </>

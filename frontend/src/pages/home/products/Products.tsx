@@ -10,7 +10,6 @@ interface IProducts {
 const Products: React.FC<IProducts> = ({ products }) => {
   return (
     <div id="products" className="products">
-      <h1 className="medium-margin-bottom">Våre produkter</h1>
       <SimpleSlider products={products} />
     </div>
   );
