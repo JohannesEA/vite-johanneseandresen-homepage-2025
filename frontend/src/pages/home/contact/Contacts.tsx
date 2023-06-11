@@ -21,13 +21,15 @@ const Contacts = ({ data }: ContactsProps) => {
       <div className="contact-info__banners large-margin-top large-margin-bottom">
         <div className="banner__container">
           <div className="banner">
-            <AiOutlineMail size={25} className="icon" />
-            <p>{email}</p>
+            <AiOutlineMail size={35} className="icon" />
+            <a className="phone__link" href={`mailto:${email}`}>
+              {email}
+            </a>
           </div>
         </div>
         <div className="banner__container">
           <div className="banner">
-            <AiOutlinePhone size={25} className="icon" />
+            <AiOutlinePhone size={35} className="icon" />
             <a className="phone__link" href={`tel:${phonenumber}`}>
               {phonenumber}
             </a>
@@ -35,7 +37,7 @@ const Contacts = ({ data }: ContactsProps) => {
         </div>
         <div className="banner__container">
           <div className="banner">
-            <BiMap size={25} className="icon" />
+            <BiMap size={35} className="icon" />
             <p>{adress}</p>
           </div>
         </div>

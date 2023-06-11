@@ -12,6 +12,7 @@
 }
 
 .newsletter-contact-form {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,12 +21,24 @@
   width: 100%;
   max-width: 60em;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: var(--white);
   border-radius: 1em;
-  background-image: url("./flowers.jpg");
+  overflow: hidden;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+}
+
+.newsletter-contact-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./flowers.jpg") no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(10px);
+  z-index: -1;
 }
 
 .newsletter-contact-form__title {
@@ -51,6 +64,7 @@
   display: block;
   margin-bottom: 5px;
   text-align: left;
+  color: var(--white);
 }
 
 .newsletter-invalid-feedback {
@@ -69,14 +83,14 @@
   max-width: 200px;
   padding: 10px;
   font-size: 1.5rem;
-  background-color: transparent;
+  background-color: var(--white);
   color: var(--black);
   border: 1px solid var(--gold);
 }
 
 .newsletter-contact-form__button:hover {
-  color: var(--black);
-  background-color: var(--gold-hover);
+  color: var(--white);
+  background-color: var(--gold);
   border: 1px solid var(--gold);
 }
 
