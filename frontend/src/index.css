@@ -90,6 +90,7 @@ p {
   --red: #e83338;
   --box-shadow: rgba(149, 157, 165, 0.2);
   --border-radius: 0.2em;
+  --max-width: 120em;
 }
 
 .medium-margin-bottom {

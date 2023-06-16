@@ -1,6 +1,6 @@
 .products {
   padding: 20px;
-  max-width: 1900px;
+  max-width: var(--max-width);
   min-height: 80vh;
   margin: 0 auto;
   text-align: center;

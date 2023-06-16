@@ -39,7 +39,7 @@ const About: React.FC<IAbout> = ({ data }) => {
         </Col>
       </Row>
       <Row className="about__row about__row--cta">
-        <MyButton text={"Les mer"} onPress={routeChange} />
+        <MyButton text={"Les mer"} onPress={routeChange} color="black" />
       </Row>
     </Container>
   );

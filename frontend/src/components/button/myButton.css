@@ -1,14 +1,29 @@
 .button {
-  border: 2px solid var(--gold);
+  border: 2px solid;
   background-color: transparent;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
-  font-size: 1, 2em;
+  font-size: 1.2em;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.button.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.button.gold:hover {
+  background-color: var(--gold);
   color: var(--black);
 }
 
-.button:hover {
+.button.black {
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+.button.black:hover {
   background-color: var(--gold);
+  color: var(--black);
 }

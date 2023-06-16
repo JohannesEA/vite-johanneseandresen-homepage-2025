@@ -143,7 +143,11 @@ const ContactForm: React.FC = () => {
                       className="invalid-feedback"
                     />
                   </BootstrapForm.Group>
-                  <MyButton text={"Send melding"} onPress={handleSubmit} />
+                  <MyButton
+                    text={"Send melding"}
+                    onPress={handleSubmit}
+                    color="black"
+                  />
                 </Form>
               </>
             );

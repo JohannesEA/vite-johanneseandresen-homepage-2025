@@ -82,7 +82,11 @@ const Newsletter: React.FC = () => {
                       className="newsletter-invalid-feedback"
                     />
                   </BootstrapForm.Group>
-                  <MyButton text={"Meld deg på"} onPress={handleSubmit} />
+                  <MyButton
+                    text={"Meld deg på"}
+                    onPress={handleSubmit}
+                    color="gold"
+                  />
                 </Form>
               </>
             )

@@ -4,11 +4,12 @@ import "./myButton.css";
 interface IButtonProps {
   text: string;
   onPress: () => void;
+  color: string;
 }
 
-const MyButton: React.FC<IButtonProps> = ({ text, onPress }) => {
+const MyButton: React.FC<IButtonProps> = ({ text, onPress, color }) => {
   return (
-    <button className={"button"} onClick={onPress}>
+    <button className={`button ${color}`} onClick={onPress}>
       {text}
     </button>
   );
