@@ -24,8 +24,22 @@ body {
   color: var(--gray--dark);
 }
 
+.footer__icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 7em;
+  margin: 0 auto;
+}
+
+.footer__icon {
+}
+
 @media (min-width: 768px) {
   .footer__section {
     text-align: left;
+  }
+  .footer__icons {
+    margin: 0;
   }
 }
