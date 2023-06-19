@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"; // Importing social icons
+import { FaFacebookF, FaInstagram } from "react-icons/fa"; // Importing social icons
 import "./footer.css";
 import { ContactProps } from "../../hooks/useFetchContactinformation";
 

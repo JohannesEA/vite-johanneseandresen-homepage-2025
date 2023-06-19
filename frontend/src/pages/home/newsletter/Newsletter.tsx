@@ -45,7 +45,7 @@ const Newsletter: React.FC = () => {
       <h1 className="medium-margin-bottom large-margin-top">
         Meld deg på vårt nyhetsbrev
       </h1>
-
+      v{" "}
       <Container className="newsletter-contact-form">
         {!showSendAnimation && (
           <div className="newsletter-contact-form__title">
@@ -63,7 +63,11 @@ const Newsletter: React.FC = () => {
             ) : (
               <>
                 {" "}
-                <Form className="newsletter-contact-form__form">
+                <Form
+                  className="newsletter-contact-form__form"
+                  action="https://skeivestilker.us14.list-manage.com/subscribe/post?u=7f3d18203bcc0c4987edaba7b&amp;id=e46a074c18&amp;f_id=00dda2e0f0"
+                  method="post"
+                >
                   <BootstrapForm.Group className="newsletter-contact-form__group">
                     <BootstrapForm.Label className="newsletter-contact-form__label">
                       Epost

@@ -9,8 +9,9 @@ import useAboutData from "../../hooks/useAboutData";
 import useProductData from "../../hooks/useProductData";
 import useCarouselleData from "../../hooks/useCarouselledata";
 import FlowerAnimation from "../../animations/FlowerAnimation";
-import Newsletter from "./newsletter/Newsletter";
+
 import useContactInfo from "../../hooks/useFetchContactinformation";
+import NewsletterSubscribe from "../../components/newsletter-form/NewsletterSubscribe";
 
 const Homepage = () => {
   const { data, loading } = useAboutData();
@@ -22,7 +23,7 @@ const Homepage = () => {
     loading || isCarouselleLoading || isProductLoading || contactinfoLoading;
 
   return (
-    <>
+    <div className="homepage">
       {showLoadingAnimation ? (
         <div className="animation__container">
           <FlowerAnimation />
@@ -33,12 +34,13 @@ const Homepage = () => {
           <Carouselle carouselleSlides={carouselleSlides} />
           <About data={data} />
           <Products products={products} />
-          <Newsletter />
+          {/* <Newsletter /> */}
+          <NewsletterSubscribe />
           <Contacts data={contactinfo} />
           <Footer data={contactinfo} />
         </>
       )}
-    </>
+    </div>
   );
 };
 
