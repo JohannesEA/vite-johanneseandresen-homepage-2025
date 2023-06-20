@@ -50,6 +50,10 @@
   flex-direction: column;
 }
 
+.navbar__link:hover {
+  color: var(--black-hover);
+}
+
 .navbar__link {
   color: var(--gray--dark);
   padding: 0.5rem 0;
@@ -58,8 +62,20 @@
   font-size: 1.25rem;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
 }
 
-.navbar__link:hover {
-  color: var(--black-hover);
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--gold);
+  transition: width 0.4s;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
 }
