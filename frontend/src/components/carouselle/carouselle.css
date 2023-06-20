@@ -4,6 +4,7 @@
   justify-content: center;
   margin: 0 auto;
   max-width: var(--max-width);
+  background-color: var(--light);
   text-align: center;
   min-height: 80vh;
 }

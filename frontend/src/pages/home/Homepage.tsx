@@ -9,9 +9,8 @@ import useAboutData from "../../hooks/useAboutData";
 import useProductData from "../../hooks/useProductData";
 import useCarouselleData from "../../hooks/useCarouselledata";
 import FlowerAnimation from "../../animations/FlowerAnimation";
-
 import useContactInfo from "../../hooks/useFetchContactinformation";
-import NewsletterSubscribe from "../../components/newsletter-form/NewsletterSubscribe";
+import Newsletter from "./newsletter/Newsletter";
 
 const Homepage = () => {
   const { data, loading } = useAboutData();
@@ -34,8 +33,7 @@ const Homepage = () => {
           <Carouselle carouselleSlides={carouselleSlides} />
           <About data={data} />
           <Products products={products} />
-          {/* <Newsletter /> */}
-          <NewsletterSubscribe />
+          <Newsletter />
           <Contacts data={contactinfo} />
           <Footer data={contactinfo} />
         </>

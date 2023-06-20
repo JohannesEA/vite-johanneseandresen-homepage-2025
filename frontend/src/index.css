@@ -6,6 +6,11 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--light);
+}
+
+html {
+  background-color: var(--light);
 }
 
 code {
@@ -92,6 +97,7 @@ p {
   --box-shadow: rgba(149, 157, 165, 0.2);
   --border-radius: 0.2em;
   --max-width: 120em;
+  --max-form-width: 70em;
 }
 
 .medium-margin-bottom {
