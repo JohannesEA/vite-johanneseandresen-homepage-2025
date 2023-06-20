@@ -31,7 +31,7 @@
 
 .newsletter__label {
   width: 100%;
-  text-align: flex-start;
+  text-align: left;
   color: var(--light);
 }
 
@@ -44,19 +44,28 @@
 .newsletter__status--sending {
   color: var(--light);
   background-color: var(--dark);
-  width: 100%;
+  width: auto;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
 }
 
 .newsletter__status--error {
   color: var(--light);
   background-color: rgba(255, 0, 0, 0.4);
-  width: 100%;
+  width: auto;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
 }
 
 .newsletter__status--success {
   color: var(--light);
   background-color: var(--green);
-  width: 100%;
+  width: auto;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
 }
 
 .newsletter__input {
