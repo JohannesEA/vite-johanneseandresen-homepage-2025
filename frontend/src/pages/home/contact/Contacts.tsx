@@ -1,4 +1,4 @@
-import ContactForm from "../../../components/contact-form/ContactForm";
+// import ContactForm from "../../../components/contact-form/ContactForm";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { BiMap } from "react-icons/bi";
 import "./contact.css";
@@ -17,7 +17,7 @@ const Contacts = ({ data }: ContactsProps) => {
   return (
     <div id="contact" className="contact">
       <h1 className="medium-margin-bottom large-margin-top">Kontakt oss</h1>
-      <ContactForm />
+      {/* <ContactForm /> */}
       <div className="contact-info__banners large-margin-top large-margin-bottom">
         <div className="banner__container">
           <div className="banner">

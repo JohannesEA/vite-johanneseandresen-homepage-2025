@@ -3,6 +3,7 @@
   height: 60vh;
   width: 50vh;
   max-width: 25em;
+  max-height: 40em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

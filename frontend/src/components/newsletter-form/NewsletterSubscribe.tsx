@@ -66,7 +66,10 @@ const NewsletterSubscribe = () => {
             }}
             method="post"
           >
-            <h2 className="newsletter__title">Meld deg på vårt nyhetsbrev</h2>
+            <h2 className="newsletter__title">
+              Vær den første til å oppdage sesongens vakreste blomster direkte
+              fra vår gård
+            </h2>
             <BootstrapForm.Label className="newsletter__label">
               Epost
             </BootstrapForm.Label>
