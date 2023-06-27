@@ -17,12 +17,12 @@
 }
 
 .carouselle__caption {
-  bottom: 20px;
+  top: 20px;
+  /* Change from bottom to top */
   color: var(--white);
   margin: 0 auto;
   border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 60vh;
+  padding: 20px;
 }
 
 .carouselle__title {
