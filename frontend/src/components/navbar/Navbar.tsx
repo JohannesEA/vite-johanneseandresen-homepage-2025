@@ -109,7 +109,7 @@ const MyCustomNavbar = () => {
                     data-bs-toggle="collapse"
                     onClick={() => setShowOffcanvas(false)}
                   >
-                    Vår tilnærming
+                    Om
                   </Link>
                   <Link
                     activeClass="active"
