@@ -4,7 +4,7 @@ import "./Newsletter.css";
 import { Form as BootstrapForm } from "react-bootstrap";
 
 const url =
-  "https://skeivestilker.us14.list-manage.com/subscribe/post?u=7f3d18203bcc0c4987edaba7b&amp;id=e46a074c18&amp;f_id=00dda2e0f0";
+  "https://hotmail.us21.list-manage.com/subscribe/post?u=ec0e3a9b8ba9b4a0421eb48f4&amp;id=6d473d44a3&amp;f_id=00645ee1f0";
 
 const NewsletterSubscribe = () => {
   const [email, setEmail] = useState<string>("");
