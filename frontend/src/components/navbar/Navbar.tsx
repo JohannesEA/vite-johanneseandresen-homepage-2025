@@ -133,7 +133,7 @@ const MyCustomNavbar = () => {
                     className="navbar__link"
                     onClick={() => setShowOffcanvas(false)}
                   >
-                    Kontakt oss
+                    Kontakt
                   </Link>
                 </Nav>
               </Offcanvas.Body>
