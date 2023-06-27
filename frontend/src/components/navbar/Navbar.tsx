@@ -111,7 +111,7 @@ const MyCustomNavbar = () => {
                   >
                     Om
                   </Link>
-                  <Link
+                  {/* <Link
                     activeClass="active"
                     to="products"
                     spy={true}
@@ -121,8 +121,8 @@ const MyCustomNavbar = () => {
                     className="navbar__link"
                     onClick={() => setShowOffcanvas(false)}
                   >
-                    Våre produkter
-                  </Link>
+                    Blomster
+                  </Link> */}
                   <Link
                     activeClass="active"
                     to="contact"
