@@ -10,21 +10,3 @@
   width: 100%;
   background-color: var(--light);
 }
-
-.modal__container .modal-dialog {
-  transition: transform 0.3s ease-out;
-  transform: translateY(-100%);
-  background-color: red;
-  width: 100vw;
-  height: 100px;
-  margin: 0;
-}
-
-.modal__container .modal-content {
-  background-color: var(--light);
-  width: 100vw;
-}
-
-.modal__container.show .modal-dialog {
-  transform: translateY(0);
-}
