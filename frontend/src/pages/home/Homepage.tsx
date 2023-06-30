@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Carouselle from "../../components/carouselle/Carouselle";
 import About from "./about/About";
 import MyCustomNavbar from "../../components/navbar/Navbar";
@@ -15,13 +16,22 @@ import NewsletterModal from "../../components/newslettermodal/NewsletterModal";
 
 const Homepage = () => {
   const { data, loading } = useAboutData();
-
   const { products, isProductLoading } = useProductData();
   const { carouselleSlides, isCarouselleLoading } = useCarouselleData();
   const { data: contactinfo, loading: contactinfoLoading } = useContactInfo();
 
+  const [showModal, setShowModal] = useState(false);
+
   const showLoadingAnimation =
     loading || isCarouselleLoading || isProductLoading || contactinfoLoading;
+
+  useEffect(() => {
+    if (!showLoadingAnimation) {
+      setTimeout(() => {
+        setShowModal(true);
+      }, 1500);
+    }
+  }, [showLoadingAnimation]);
 
   return (
     <div className="homepage">
@@ -31,12 +41,11 @@ const Homepage = () => {
         </div>
       ) : (
         <>
-          <NewsletterModal />
+          {showModal && <NewsletterModal />}
           <MyCustomNavbar />
           <Carouselle carouselleSlides={carouselleSlides} />
           <About data={data} />
           <Products products={products} />
-          {/* <Newsletter /> */}
           <Contacts data={contactinfo} />
           <Footer data={contactinfo} />
         </>
