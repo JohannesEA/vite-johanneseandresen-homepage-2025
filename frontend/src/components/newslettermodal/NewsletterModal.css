@@ -1,16 +1,3 @@
-.animation__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.homepage {
-  width: 100%;
-  background-color: var(--light);
-}
-
 .modal__container .modal-dialog {
   transition: transform 0.3s ease-out;
   transform: translateY(-100%);
@@ -27,4 +14,10 @@
 
 .modal__container.show .modal-dialog {
   transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+  .modal__container .modal-dialog {
+    height: auto;
+  }
 }

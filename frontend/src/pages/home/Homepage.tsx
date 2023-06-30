@@ -10,10 +10,12 @@ import useProductData from "../../hooks/useProductData";
 import useCarouselleData from "../../hooks/useCarouselledata";
 import FlowerAnimation from "../../animations/FlowerAnimation";
 import useContactInfo from "../../hooks/useFetchContactinformation";
-import Newsletter from "./newsletter/Newsletter";
+
+import NewsletterModal from "../../components/newslettermodal/NewsletterModal";
 
 const Homepage = () => {
   const { data, loading } = useAboutData();
+
   const { products, isProductLoading } = useProductData();
   const { carouselleSlides, isCarouselleLoading } = useCarouselleData();
   const { data: contactinfo, loading: contactinfoLoading } = useContactInfo();
@@ -29,11 +31,12 @@ const Homepage = () => {
         </div>
       ) : (
         <>
+          <NewsletterModal />
           <MyCustomNavbar />
           <Carouselle carouselleSlides={carouselleSlides} />
           <About data={data} />
           <Products products={products} />
-          <Newsletter />
+          {/* <Newsletter /> */}
           <Contacts data={contactinfo} />
           <Footer data={contactinfo} />
         </>

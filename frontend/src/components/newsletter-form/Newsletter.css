@@ -89,6 +89,7 @@
   margin: 48px auto 0 auto;
   border-color: var(--gold);
   color: var(--gold);
+  max-width: 10em;
 }
 
 .newsletter__submit:hover {
