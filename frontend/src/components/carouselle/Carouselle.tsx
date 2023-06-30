@@ -8,7 +8,12 @@ interface ICarouselle {
 
 const Carouselle: React.FC<ICarouselle> = ({ carouselleSlides }) => {
   return (
-    <Carousel id="hero" className="carouselle">
+    <Carousel
+      id="hero"
+      className="carouselle"
+      prevIcon={carouselleSlides.length > 1}
+      nextIcon={carouselleSlides.length > 1}
+    >
       {carouselleSlides.map((slide, index) => (
         <Carousel.Item key={index} className="carouselle__item">
           <img
