@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import NewsletterSubscribe from "../../components/newsletter-form/NewsletterSubscribe";
 import "./NewsletterModal.css";
 
 const NewsletterModal = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  useEffect(() => {
-    if (!localStorage.getItem("modalClosed")) {
-      setIsOpen(true);
-    }
-  }, []);
+  const [isOpen, setIsOpen] = useState(
+    localStorage.getItem("modalClosed") === null
+  );
 
   const handleClose = () => {
     setIsOpen(false);
@@ -21,7 +17,7 @@ const NewsletterModal = () => {
     <Modal className="modal__container" show={isOpen} onHide={handleClose}>
       <Modal.Header closeButton />
       <Modal.Body>
-        <NewsletterSubscribe />
+        <NewsletterSubscribe handleClose={handleClose} />
       </Modal.Body>
     </Modal>
   );
