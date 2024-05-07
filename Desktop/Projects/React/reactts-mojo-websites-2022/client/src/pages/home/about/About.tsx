@@ -31,10 +31,10 @@ const About = () => {
     <Wrapper id="about">
       <h2 className="about__title">OM OSS</h2>
       <p className="about__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto a
-        nihil labore laboriosam libero esse illo ipsum inventore, rem magni
-        soluta illum cumque nobis veritatis. Culpa iure sint nostrum, soluta cum
-        iusto ratione quia, ipsa saepe odio maiores nam laborum?
+        MoJo Websites består av motiverte og flinke utviklere som har et
+        brennende ønske om å utvikle nettsider etter dine behov. Vi ønsker å
+        lage smarte, effektive og brukervennelige løsninger som passer for alle
+        type skjermer.
       </p>
       <h3 className="about__title about__title--process">
         Vår kreative prosess

@@ -127,6 +127,13 @@ const Contact = () => {
   return (
     <Wrapper id="contact">
       <h2 className="contact__title">KONTAKT OSS</h2>
+
+      <p className="contact__text">
+        Ønser du en skreddersydd nettside utviklet av svært motiverte og flinke
+        utviklere? Ta kontakt med oss! Vi tar i mot alle hendvendelser og svarer
+        deg så raskt vi kan. Les mer om nettsidene vi tilbyr og bestill
+        nettsiden du ønsker.
+      </p>
       <div className="contact-info__container">
         <p className="contact__title">+47 99509035</p>
         <p className="contact__title">mojo.websites1@gmail.com</p>

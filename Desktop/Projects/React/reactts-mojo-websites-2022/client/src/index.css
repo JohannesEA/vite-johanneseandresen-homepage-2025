@@ -105,8 +105,17 @@ a {
     background-color: rgba(255, 0, 0, 1);
 }
 
+.fab__menu-button {
+    background-color: var(--color--light);
+    z-index: 999;
+    position: fixed;
+    right: 1em;
+    top: 3em;
+    min-width: 1em;
+    width: 3em;
+}
+
 form {
-    box-shadow: 1px 2px 1px 1px var(--color--primary);
     width: 100%;
     margin: 0 auto;
     max-width: 80em;
@@ -121,4 +130,19 @@ textarea {
     padding: 1em;
     width: 90%;
     font-family: "Montserrat", sans-serif;
+}
+
+.modal__overlay {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
 }

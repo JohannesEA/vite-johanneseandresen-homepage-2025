@@ -6,12 +6,12 @@ export const Wrapper = styled.div`
   width: 80%;
   max-width: 25em;
   margin: 1em auto;
-  box-shadow: 0px 0px 2px 1px var(--color--shadow);
+  box-shadow: var(--box--shadow);
 
   .service-box__img {
     width: 100;
     max-width: 4em;
-    margin: 0 auto;
+    margin: 1em auto 0 auto;
   }
 
   .service-box__title {
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   .service-box__text {
     color: var(--color--dark);
     width: 90%;
-    margin: 0.3em auto 0.5em auto;
+    margin: 1em auto 0.5em auto;
     max-width: 18em;
   }
 
@@ -40,5 +40,9 @@ export const Wrapper = styled.div`
     border-bottom: 1px solid var(--color--dark);
     max-width: 10em;
     margin: 0.5em auto;
+
+    &:hover {
+      color: var(--color--dark-hover);
+    }
   }
 `;

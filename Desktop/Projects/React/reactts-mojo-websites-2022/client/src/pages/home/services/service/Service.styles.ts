@@ -1,14 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Wrapper = styled.div`
+  margin: 0 auto;
   max-width: var(--max--section--width);
+  position: relative;
+
   .service-info-top__container {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--color--primary);
     width: 100%;
-    padding-top: 2em;
+    padding-top: 9em;
     padding-bottom: 2em;
   }
 
@@ -107,5 +110,75 @@ export const Wrapper = styled.div`
     width: min(90%, 100em);
     margin: 0 auto var(--margin-large) auto;
     text-align: center;
+  }
+`;
+
+export const BackToLastPageButton = styled.button`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 6em;
+  left: 5%;
+  min-height: 30px;
+  width: 80%;
+  max-width: 120px;
+  outline: none;
+  border: none;
+  background-color: var(--color--secondary);
+  color: var(--color--light);
+  transition: all 0.5s ease;
+  font-size: var(--font-small);
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+
+  &:hover {
+    background-color: var(--color--secondary--hover);
+  }
+`;
+
+const animationOne = keyframes`
+0%{
+  opacity:0;
+}
+100%{
+  opacity:1;
+}
+
+`;
+
+const animationTwo = keyframes`
+0%{
+  width:0px;
+
+}
+100%{
+  width:50px;
+}
+
+`;
+
+export const FloatingActionButton = styled.button`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: var(--margin-small);
+  right: var(--margin-small);
+  max-width: 5em;
+  height: 50px;
+  z-index: 999;
+  outline: none;
+  border: none;
+  background-color: var(--color--secondary);
+  color: var(--color--light);
+  transition: all 0.5s ease;
+  font-size: var(--font-small);
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  animation: ${animationOne} 0.5s linear, ${animationTwo} 0.5s linear;
+
+  &:hover {
+    background-color: var(--color--secondary-hover);
   }
 `;

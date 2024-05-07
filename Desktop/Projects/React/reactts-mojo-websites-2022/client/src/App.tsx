@@ -17,6 +17,7 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tjenester/:id" element={<Service />} />

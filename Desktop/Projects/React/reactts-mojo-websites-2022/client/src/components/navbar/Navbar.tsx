@@ -5,17 +5,14 @@ import { Link } from "react-scroll";
 //styles
 import { Wrapper, Menulink, Menu, HamburgerContainer } from "./Navbar.styles";
 import { Spiral as Hamburger } from "hamburger-react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 const Navbar = () => {
   const { width } = getWindowDimensions();
   const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState({
-    home: false,
-    about: false,
-    services: false,
-    portfolio: false,
-    contact: false,
-  });
+
+  const menu = useSelector((state: RootState) => state.menu);
 
   return (
     <Wrapper>
@@ -29,23 +26,12 @@ const Navbar = () => {
           duration={300}
           style={{ textDecoration: "none", color: "var(--color--dark)" }}
         >
-          {" "}
           <h3>MOJO</h3>
         </Link>
 
-        {width < 800 && (
-          <HamburgerContainer>
-            <Hamburger
-              label="Show menu"
-              size={40}
-              toggled={isOpen}
-              toggle={() => setIsOpen(!isOpen)}
-              color="var(--color--dark)"
-            ></Hamburger>
-          </HamburgerContainer>
-        )}
-        {(isOpen || width > 800) && (
-          <Menu isOpen={isOpen}>
+        {width < 800 && <HamburgerContainer></HamburgerContainer>}
+        {(menu.menuIsActive || width > 800) && (
+          <Menu isOpen={menu.menuIsActive}>
             <Link
               to="hero"
               spy={true}
@@ -55,7 +41,6 @@ const Navbar = () => {
               style={{ textDecoration: "none" }}
             >
               <Menulink
-                className={active.home ? "manu-link-active" : ""}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
@@ -71,7 +56,6 @@ const Navbar = () => {
               duration={300}
             >
               <Menulink
-                className={active.about ? "manu-link-active" : ""}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
@@ -87,7 +71,6 @@ const Navbar = () => {
               duration={300}
             >
               <Menulink
-                className={active.services ? "manu-link-active" : ""}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
@@ -103,7 +86,6 @@ const Navbar = () => {
               duration={300}
             >
               <Menulink
-                className={active.portfolio ? "manu-link-active" : ""}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
@@ -119,7 +101,6 @@ const Navbar = () => {
               duration={300}
             >
               <Menulink
-                className={active.contact ? "manu-link-active" : ""}
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}

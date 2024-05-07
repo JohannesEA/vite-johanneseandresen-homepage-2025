@@ -2,9 +2,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import getWindowDimensions from "../../../../universal/Functions";
+import { Link as DomLink } from "react-router-dom";
 
 //styles
-import { Wrapper } from "./Service.styles";
+import { FloatingActionButton, Wrapper } from "./Service.styles";
 
 //dummydata
 
@@ -12,6 +13,7 @@ import ImageSlider from "../../../../components/slider/ImageSlider";
 import { SERVICES } from "../../../../dummydata/data";
 import { Project } from "../../../../models/Project";
 import SecondNavbar from "../../../../components/navbar/SecondNavbar";
+import TopOrderWebsiteBar from "../../../../components/top-order-website-bar/TopOrderWebsiteBar";
 
 const Service = () => {
   const { width } = getWindowDimensions();
@@ -24,7 +26,13 @@ const Service = () => {
 
   return (
     <Wrapper>
+      <TopOrderWebsiteBar />
       <SecondNavbar />
+      <DomLink to="/">
+        <FloatingActionButton style={{ width: "80px" }}>
+          Tilbake
+        </FloatingActionButton>
+      </DomLink>
       {SERVICES.filter((x) => x.title.toLowerCase() === id.toLowerCase()).map(
         (x) => (
           <div className="service-info-top__container" key={x.title}>

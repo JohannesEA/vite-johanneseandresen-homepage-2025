@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  top: 0;
+  top: 2em;
   height: 5em;
   width: 100%;
   margin: 0 auto;
@@ -35,18 +35,21 @@ export const Wrapper = styled.div`
   background-color: var(--color--light);
 
   .active {
-    border-bottom: 2px solid var(--color--dark);
+    box-shadow: rgba(27, 31, 35, 0.4) 0px 1px 0px,
+      rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   }
 
   .logo-active {
     border-bottom: none;
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .navbar__inner-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     max-width: var(--max--section--width);
     margin: 0 auto;
   }
@@ -62,14 +65,14 @@ export const Menu = styled.div<MenuProps>`
   transition: all 1s ease;
   background-color: var(--color--light);
   @media (max-width: 800px) {
-    z-index: 100;
+    z-index: 99999;
     flex-direction: column;
     align-items: center;
     margin: 0;
     width: 100%;
     height: var(--min-section-height);
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 2em;
     left: auto;
     animation: ${animationTwo} 0.3s linear, ${animationOne} 0.3s linear;
     right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
@@ -83,21 +86,11 @@ export const Menulink = styled.p`
   cursor: pointer;
   color: var(--color--dark);
   position: relative;
+  transition: all 0.3s ease;
 
-  &:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #fff;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-  &:hover:before {
-    visibility: visible;
-    width: 100%;
+  &:hover {
+    box-shadow: rgba(27, 31, 35, 0.4) 0px 1px 0px,
+      rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   }
 
   @media (max-width: 800px) {

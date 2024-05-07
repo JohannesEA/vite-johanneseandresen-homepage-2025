@@ -17,6 +17,12 @@ export const Wrapper = styled.div`
     color: var(--color--light);
   }
 
+  .contact__text {
+    color: var(--color--light);
+    margin: 1em auto;
+    width: 90%;
+  }
+
   .contact-info__container {
     margin: 1em auto;
     box-shadow: 1px 2px 1px 1px var(--color--primary);
@@ -34,6 +40,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     background-color: var(--color--light);
+    box-shadow: var(--box--shadow);
   }
 
   .contact__button {

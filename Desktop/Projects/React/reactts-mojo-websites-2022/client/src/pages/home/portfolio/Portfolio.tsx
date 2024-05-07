@@ -63,12 +63,34 @@ export const PROJECTS: Project[] = [
     url: "https://ebvinduer.no/",
     price: 5000,
   },
+  {
+    id: 6,
+    title: "Skeive Stilker",
+    type: "Nettbutikk",
+    description:
+      "Skeive Stilker ble laget som en kjøp/salgs nettside for blomster. Dette er en dynamisk løsning der eieren av siden kan endre på alt av innhold enkelt med en administasjonsløsning",
+    logo: "/assets/logos/sb.png",
+    images: ["", "", ""],
+    url: "https://skeive-blomster.netlify.app/",
+    price: 15000,
+  },
+  {
+    id: 7,
+    title: "SBG2",
+    type: "Informasjon",
+    description:
+      "SBG2 ble laget som en informasjons/bestillings/booking nettside for restaurant/bar. Dette er en dynamisk løsning der eieren av siden kan endre på alt av innhold enkelt med en administasjonsløsning",
+    logo: "/assets/logos/SBG2 (1).png",
+    images: ["", "", ""],
+    url: "https://sbg2.netlify.app/",
+    price: 15000,
+  },
 ];
 
 const Portfolio = () => {
   return (
     <Wrapper id="portfolio">
-      <h2>PORTEFØLE</h2>
+      <h2>PORTEFØLJE</h2>
       <ImageSlider projects={PROJECTS} slidesToShow={3} />
     </Wrapper>
   );
