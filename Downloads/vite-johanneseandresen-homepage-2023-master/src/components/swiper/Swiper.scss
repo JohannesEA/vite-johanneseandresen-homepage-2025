@@ -1,0 +1,21 @@
+.swiper__img {
+  max-width: 10opx;
+  max-height: 100px;
+}
+
+.swiper {
+  min-height: 70vh;
+}
+
+.swiper-pagination {
+  color: var(--color-primaryy) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(218, 208, 208) !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgb(218, 208, 208) !important;
+  padding: 2px;
+}
