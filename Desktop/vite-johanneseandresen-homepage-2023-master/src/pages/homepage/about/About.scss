@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
+// Define your color variables and font family variable at the top
+:root {
+  --color-primary: #fff;
+  --color-secondary: #000;
+  --color-tertiary: #333;
+  --font-family-base: "Poppins", sans-serif;
+}
+
+// About section styling
+.about {
+  padding: 2rem;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  min-height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-base);
+  &__title {
+    color: var(--color-primary);
+    margin-bottom: 48px;
+  }
+  &__container {
+    max-width: 960px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+  &__image {
+    max-height: 300px;
+    max-width: 300px;
+    min-height: 200px;
+    min-width: 200px;
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 48px;
+    object-fit: cover; // Maintains aspect ratio and covers the area without stretching the image
+    object-position: center;
+  }
+  &__modal-content {
+    max-width: 500px;
+    margin: 48px auto;
+  }
+  &__button {
+    display: inline-block; // Allows setting padding and margins
+    padding: 0.75rem 1.5rem; // Sizeable padding for finger-friendly touch
+    margin-top: 1rem; // Spacing from the previous element
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--color-primary); // Theme-based background color
+    color: var(
+      --color-secondary
+    ); // Text color that contrasts with the button background
+    text-align: center; // Center the text inside
+    text-decoration: none; // Remove underline from link
+    font-weight: 600; // Make the font a bit bolder
+    border-radius: 4px; // Rounded corners
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; // Smooth transition for hover effect
+    &:hover,
+    &:focus {
+      // Hover and focus states for interactivity
+      background-color: var(
+        --color-tertiary
+      ); // Change background color on hover
+      color: var(--color-primary); // Change text color on hover for contrast
+      text-decoration: none; // Maintain no underline on hover
+      outline: none; // Remove focus outline for a clean design
+    }
+    &:active {
+      // Clickable feedback
+      transform: translateY(2px); // Slight move down to mimic button press
+    }
+  }
+}
+
+// Responsive adjustments
+@media only screen and (max-width: 1024px) {
+  .about__container {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .about {
+    padding: 1rem;
+  }
+  .about__container {
+    grid-template-columns: 1fr;
+  }
+  .about__card {
+    padding: 0.75rem;
+  }
+  .about__image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+// Ensure this comes after .about so that @extend can find the classes
+.education-modal-content {
+  @extend .about;
+  &__title {
+    @extend .about__title;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: fadeInUp 0.5s ease-in-out;
+  }
+  &__item {
+    @extend .about__card;
+    margin-bottom: 1rem;
+    animation: slideIn 0.5s ease forwards;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Keyframes for animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Hover effect for individual items
+.education__item:hover {
+  transform: translateY(-5px);
+  background: lighten(rgba(0, 0, 0, 0.1), 5%);
+}
