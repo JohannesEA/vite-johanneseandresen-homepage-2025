@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
 import Carouselle from "../../components/carouselle/Carouselle";
-import About from "./about/About";
 import MyCustomNavbar from "../../components/navbar/Navbar";
 import "./home.css";
-import Products from "./products/Products";
 import Contacts from "./contact/Contacts";
 import Footer from "../../components/footer/Footer";
 import useAboutData from "../../hooks/useAboutData";
@@ -11,8 +8,8 @@ import useProductData from "../../hooks/useProductData";
 import useCarouselleData from "../../hooks/useCarouselledata";
 import FlowerAnimation from "../../animations/FlowerAnimation";
 import useContactInfo from "../../hooks/useFetchContactinformation";
-
-import NewsletterModal from "../../components/newslettermodal/NewsletterModal";
+import NewsletterSubscribe from "../../components/newsletter-form/NewsletterSubscribe";
+import NewsletterPage from "./newsletter/NewsletterPage";
 
 const Homepage = () => {
   const { data, loading } = useAboutData();
@@ -20,18 +17,8 @@ const Homepage = () => {
   const { carouselleSlides, isCarouselleLoading } = useCarouselleData();
   const { data: contactinfo, loading: contactinfoLoading } = useContactInfo();
 
-  const [showModal, setShowModal] = useState(false);
-
   const showLoadingAnimation =
     loading || isCarouselleLoading || isProductLoading || contactinfoLoading;
-
-  useEffect(() => {
-    if (!showLoadingAnimation) {
-      setTimeout(() => {
-        setShowModal(true);
-      }, 1500);
-    }
-  }, [showLoadingAnimation]);
 
   return (
     <div className="homepage">
@@ -41,12 +28,13 @@ const Homepage = () => {
         </div>
       ) : (
         <>
-          {showModal && <NewsletterModal />}
+          {/* {showModal && <NewsletterModal />} */}
           <MyCustomNavbar />
           <Carouselle carouselleSlides={carouselleSlides} />
-          <About data={data} />
-          <Products products={products} />
+          {/* <About data={data} /> */}
+          {/* <Products products={products} /> */}
           <Contacts data={contactinfo} />
+          <NewsletterPage />
           <Footer data={contactinfo} />
         </>
       )}

@@ -1,12 +1,25 @@
 .newsletter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px;
-  max-width: var(--max-width);
-  min-height: 60vh;
-  margin: 0 auto;
-  text-align: center;
-  background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    max-width: var(--max-width);
+    min-height: 60vh;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--light);
+}
+
+.newsletter__page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    max-width: var(--max-width);
+    min-height: 40vh;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--light);
 }

@@ -17,7 +17,7 @@ const NewsletterModal = () => {
     <Modal className="modal__container" show={isOpen} onHide={handleClose}>
       <Modal.Header closeButton />
       <Modal.Body>
-        <NewsletterSubscribe handleClose={handleClose} />
+        <NewsletterSubscribe />
       </Modal.Body>
     </Modal>
   );

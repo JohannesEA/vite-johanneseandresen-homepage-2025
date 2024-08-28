@@ -3,9 +3,9 @@ import { ChangeEvent, FormEvent, useReducer, useEffect } from "react";
 import { Form as BootstrapForm } from "react-bootstrap";
 import "./Newsletter.css";
 
-type NewsletterSubscribeProps = {
-  handleClose: () => void;
-};
+// type NewsletterSubscribeProps = {
+//   handleClose: () => void;
+// };
 
 const url =
   "https://hotmail.us21.list-manage.com/subscribe/post?u=ec0e3a9b8ba9b4a0421eb48f4&amp;id=6d473d44a3&amp;f_id=00645ee1f0";
@@ -41,20 +41,18 @@ const validateEmail = (email: string): boolean => {
   return reg.test(email);
 };
 
-const NewsletterSubscribe: React.FC<NewsletterSubscribeProps> = ({
-  handleClose,
-}) => {
+const NewsletterSubscribe = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (state.status === "success") {
-      handleClose();
+      // handleClose();
       setTimeout(() => {
         dispatch({ type: "setEmail", payload: "" });
         dispatch({ type: "setError", payload: "" });
       }, 3000);
     }
-  }, [state.status, handleClose]);
+  }, [state.status]);
 
   const getMessage = (
     status: "error" | "success" | "sending" | null

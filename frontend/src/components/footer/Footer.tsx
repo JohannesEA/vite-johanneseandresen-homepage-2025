@@ -21,12 +21,12 @@ const Footer = ({ data }: FooterProps) => {
             <p>{data.email}</p>
             <p>{data.adress}</p>
           </Col>
-          <Col md={3} className="footer__section">
+          {/* <Col md={3} className="footer__section">
             <h4>Om oss</h4>
             <p>Sesongbasert</p>
             <p>Kjærlighet</p>
             <p>Blomster</p>
-          </Col>
+          </Col> */}
           <Col md={3} className="footer__section ">
             <h4>Følg oss</h4>
             <div className="footer__icons">

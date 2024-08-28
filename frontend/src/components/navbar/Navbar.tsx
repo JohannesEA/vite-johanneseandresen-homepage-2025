@@ -98,7 +98,7 @@ const MyCustomNavbar = () => {
                   >
                     Hjem
                   </Link>
-                  <Link
+                  {/* <Link
                     activeClass="active"
                     to="about"
                     spy={true}
@@ -110,7 +110,7 @@ const MyCustomNavbar = () => {
                     onClick={() => setShowOffcanvas(false)}
                   >
                     Om
-                  </Link>
+                  </Link> */}
                   {/* <Link
                     activeClass="active"
                     to="products"

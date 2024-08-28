@@ -21,6 +21,7 @@ const Carouselle: React.FC<ICarouselle> = ({ carouselleSlides }) => {
             src={slide.image}
             alt={slide.title}
           />
+
           <Carousel.Caption className="carouselle__caption">
             <h3 className="carouselle__title">{slide.title}</h3>
             <p className="carouselle__description">{slide.description}</p>
