@@ -3,10 +3,9 @@ export const AboutMeModalContent = () => {
     <div>
       <h3 className="about__card-label">Om meg</h3>
       <p className="about__modal-content">
-        Jeg er en 27 år gammel mann som brenner for teknologi og utvikling. Som
-        fullstack-utvikler hos Eika får jeg utnyttet mine ferdigheter og lærer
-        nye ting hver dag. Men det stopper ikke på kontoret - jeg har alltid et
-        par sideprosjekter på gang som holder meg skjerpet og engasjert.
+      Jeg er en 27 år gammel teknologi-entusiast med en lidenskap for utvikling.
+       Som fullstack-utvikler hos Sonat får jeg muligheten til å utnytte mine ferdigheter på tvers av hele utviklingsstakken, fra frontend-design til backend-logikk.
+        Hver dag gir meg nye utfordringer og muligheter til å lære, noe som holder meg motivert og engasjert.
       </p>
 
       <a href="https://github.com/JohannesEA" className="about__button">

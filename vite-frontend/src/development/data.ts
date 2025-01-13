@@ -31,10 +31,11 @@ export const PROGRAMMING_LANGUAGES: ColorColumnProps[] = [
 ];
 
 export const FRAMEWORKS: ColorColumnProps[] = [
-    { title: "React", description: "3 års erfaring", expertise: 90 },
-    { title: "React-native", description: "2 års erfaring", expertise: 90 },
+    { title: "React", description: "4 års erfaring", expertise: 90 },
+    { title: "React-native", description: "3 års erfaring", expertise: 90 },
     { title: "Ktor", description: "1 års erfaring", expertise: 70 },
     { title: "Spring", description: "2 års erfaring", expertise: 70 },
+    { title: "Flutter", description: "3 års erfaring", expertise: 90 },
     { title: "Angular", description: "1 års erfaring", expertise: 60 },
     { title: "Django", description: "1 års erfaring", expertise: 50 },
 ];
@@ -42,9 +43,9 @@ export const FRAMEWORKS: ColorColumnProps[] = [
 
 
 export const ABOUT_DETAILS: AboutDetails[] = [
-    { label: AboutLabels.Age, value: "Jeg er en 26 år gammel mann som brenner for teknologi og utvikling..." },
+    { label: AboutLabels.Age, value: "Jeg er en 27 år gammel teknologi-entusiast med en lidenskap for utvikling..." },
     { label: AboutLabels.Education, value: "Dataingeniør" },
-    { label: AboutLabels.Experience, value: ">2 år som fullstack utvikler" },
+    { label: AboutLabels.Experience, value: ">3 år som fullstack utvikler" },
     { label: AboutLabels.Languages, value: "Norsk, Engelsk" },
     {
         label: AboutLabels.ProgrammingLanguages,
@@ -52,6 +53,6 @@ export const ABOUT_DETAILS: AboutDetails[] = [
     },
     {
         label: AboutLabels.Frameworks,
-        value: "React, Ktor, Firebase, React-native",
+        value: "React, React-native, Ktor, Spring, Flutter, Angular, Django, Firebase",
     },
 ];
