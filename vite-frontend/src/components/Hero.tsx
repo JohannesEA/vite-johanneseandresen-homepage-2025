@@ -9,16 +9,16 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5 dark:from-background dark:via-background dark:to-background">
-      <div className="absolute inset-0 dark:bg-grid-white/[0.05] bg-grid-black/[0.05]" />
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-transparent via-primary/5 to-transparent dark:from-transparent dark:via-background/5 dark:to-transparent" />
+      <div className="absolute inset-0 dark:bg-grid-white/[0.05] bg-grid-black/[0.05] pointer-events-none" />
+      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-transparent via-primary/5 to-transparent dark:from-transparent dark:via-background/5 dark:to-transparent pointer-events-none" />
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(var(--primary), 0.05) 0%, rgba(var(--secondary), 0.05) 25%, rgba(var(--primary), 0.025) 50%, transparent 100%)',
           opacity: 0.8,
         }}
       />
-      <div className="container max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 py-12">
+      <div className="container relative max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 py-12 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,28 +34,40 @@ export const Hero = () => {
           <p className="text-muted-foreground text-lg md:text-xl mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
             {t.hero.description}
           </p>
-          <div className="flex flex-col gap-4 mb-8 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-col gap-4 mb-8 animate-fade-up relative z-20" style={{ animationDelay: "0.3s" }}>
             <a 
               href="mailto:johannes.erdahl.andresen@gmail.com"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "mailto:johannes.erdahl.andresen@gmail.com";
+              }}
             >
               <Mail className="text-primary group-hover:scale-110 transition-transform" size={18} />
               <span>johannes.erdahl.andresen@gmail.com</span>
             </a>
             <a 
               href="tel:+4799509035"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "tel:+4799509035";
+              }}
             >
               <Phone className="text-primary group-hover:scale-110 transition-transform" size={18} />
               <span>+47 99509035</span>
             </a>
           </div>
-          <div className="flex justify-center md:justify-start gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <div className="flex justify-center md:justify-start gap-4 animate-fade-up relative z-20" style={{ animationDelay: "0.4s" }}>
             <a
               href="https://github.com/JohannesEA"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-muted hover:bg-primary text-muted-foreground hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+              className="p-2 rounded-full bg-muted hover:bg-primary text-muted-foreground hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://github.com/JohannesEA", "_blank", "noopener noreferrer");
+              }}
             >
               <Github size={24} />
             </a>
@@ -63,7 +75,11 @@ export const Hero = () => {
               href="https://www.linkedin.com/in/johannes-erdahl-andresen-2aa117205/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-muted hover:bg-primary text-muted-foreground hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+              className="p-2 rounded-full bg-muted hover:bg-primary text-muted-foreground hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://www.linkedin.com/in/johannes-erdahl-andresen-2aa117205/", "_blank", "noopener noreferrer");
+              }}
             >
               <Linkedin size={24} />
             </a>
